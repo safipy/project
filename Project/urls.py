@@ -1,7 +1,8 @@
-from django.urls import path
-from exem import views
+from django.contrib import admin
+from django.urls import path, include
+
 
 urlpatterns = [
-    path('exem/', views.ExemListCreateAPIView.as_view()),
-    path('exem/<int:id_exem>/', views.ExemDeteilAPIView.as_view()),
+    path('admin/', admin.site.urls),
+    path('api/v1/', include('exem.urls')),
 ]
